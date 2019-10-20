@@ -1,16 +1,20 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-import { CatSchema } from 'src/schemas/cat.schema';
 import { BreedsController } from './breeds.controller';
-import { BreedsService } from './breeds.service';
+import { BreedsService } from './services/breeds/breeds.service';
+import { BreedSchema } from '../schemas/breed.schema';
+import { BreedNameKeyService } from './services/breed-name-key/breed-name-key.service';
 
 @Module({
   imports: [
-    MongooseModule.forFeature([{ name: 'Cat', schema: CatSchema }]),
+    MongooseModule.forFeature([
+      { name: 'Breed', schema: BreedSchema },
+    ]),
   ],
   controllers: [
     BreedsController,
   ],
-  providers: [BreedsService],
+  providers: [BreedsService, BreedNameKeyService],
+  exports: [BreedsService],
 })
 export class BreedsModule { }
