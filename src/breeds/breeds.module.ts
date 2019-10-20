@@ -15,5 +15,6 @@ import { BreedNameKeyService } from './services/breed-name-key/breed-name-key.se
     BreedsController,
   ],
   providers: [BreedsService, BreedNameKeyService],
+  exports: [BreedsService],
 })
 export class BreedsModule { }

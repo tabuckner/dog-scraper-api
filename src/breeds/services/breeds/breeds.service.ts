@@ -37,6 +37,11 @@ export class BreedsService {
     }
   }
 
+  // TODO: No sir. Do this better.
+  async updateOrCreate(breedNameKey: string, serializedBreedDto: any) {
+    await this.breedModel.updateOne({ breedNameKey }, serializedBreedDto, { upsert: true });
+  }
+
   private mapBreedDocumentToDomainModel(entity: BreedEntity): IBreedWithKey {
     return {
       breedNameKey: entity.breedNameKey,
