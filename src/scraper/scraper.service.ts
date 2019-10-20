@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { DogScraper, BreedInfo } from 'dog-scraper-core';
+import { DogScraper, BreedInfo } from '@tabuckner/dog-scraper-core';
 import { AKC_DATA_MOCK } from '../mocks/akc-data.mock';
 
 @Injectable()
@@ -12,7 +12,6 @@ export class ScraperService {
 
   scrapeAkc(): Promise<BreedInfo> {
     return this.scraper.getBreedInfo();
-    return this.getMockAkcData();
   }
 
   private getMockAkcData(): Promise<BreedInfo> {
