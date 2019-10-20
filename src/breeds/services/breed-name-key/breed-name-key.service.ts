@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { CreateBreedDto } from '../../dto/create-breed.dto';
-import { IBreedWithKey } from '../../interfaces/breed.interface';
-import { InvalidInboundBreedException } from '../../errors/invalid-breed-dto.exception';
+import { CreateBreedDto } from '../../../dto/create-breed.dto';
+import { IBreedWithKey } from '../../../interfaces/breed.interface';
+import { InvalidInboundBreedException } from '../../../errors/invalid-breed-dto.exception';
 
 @Injectable()
 export class BreedNameKeyService {

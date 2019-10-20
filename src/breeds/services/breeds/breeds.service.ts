@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { BreedEntity, IBreedWithKey } from '../interfaces/breed.interface';
-import { IBreedAttribute } from '../interfaces/breed-attribute.interface';
-import { BreedNotFoundException } from '../errors/breed-not-found.exception';
-import { CreateBreedDto } from '../dto/create-breed.dto';
+import { BreedEntity, IBreedWithKey } from '../../../interfaces/breed.interface';
+import { IBreedAttribute } from '../../../interfaces/breed-attribute.interface';
+import { BreedNotFoundException } from '../../../errors/breed-not-found.exception';
+import { CreateBreedDto } from '../../../dto/create-breed.dto';
 
 @Injectable()
 export class BreedsService {
@@ -37,7 +37,6 @@ export class BreedsService {
     }
   }
 
-
   private mapBreedDocumentToDomainModel(entity: BreedEntity): IBreedWithKey {
     return {
       breedNameKey: entity.breedNameKey,
@@ -45,7 +44,7 @@ export class BreedsService {
       attributes: entity.attributes.map((_attribute) => ({
         attribute: _attribute.attribute,
         description: _attribute.description,
-        descriptionList: _attribute.descriptionList
+        descriptionList: _attribute.descriptionList,
       } as IBreedAttribute)),
     } as IBreedWithKey;
   }

@@ -1,8 +1,8 @@
 import { Controller, Post, Body, Get, Param, Patch, Delete } from '@nestjs/common';
 import { IBreedWithKey } from '../interfaces/breed.interface';
 import { CreateBreedDto } from '../dto/create-breed.dto';
-import { BreedsService } from './breeds.service';
-import { BreedNameKeyService } from './breed-name-key/breed-name-key.service';
+import { BreedsService } from './services/breeds/breeds.service';
+import { BreedNameKeyService } from './services/breed-name-key/breed-name-key.service';
 
 @Controller('breeds')
 export class BreedsController {

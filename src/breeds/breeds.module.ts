@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { BreedsController } from './breeds.controller';
-import { BreedsService } from './breeds.service';
+import { BreedsService } from './services/breeds/breeds.service';
 import { BreedSchema } from '../schemas/breed.schema';
-import { BreedNameKeyService } from './breed-name-key/breed-name-key.service';
+import { BreedNameKeyService } from './services/breed-name-key/breed-name-key.service';
 
 @Module({
   imports: [
