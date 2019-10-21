@@ -1,8 +1,8 @@
 {
   "name": "dog-scraper-api",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "A small API that consumes dog-scraper-core. Automates the scraping and management of data on a DB.",
+  "author": "tabuckner",
   "license": "MIT",
   "scripts": {
     "build": "rimraf dist && tsc -p tsconfig.build.json",
