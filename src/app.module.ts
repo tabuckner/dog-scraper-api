@@ -6,6 +6,7 @@ import { AppService } from './app.service';
 import { BreedsModule } from './breeds/breeds.module';
 import { ScraperModule } from './scraper/scraper.module';
 import { ScheduleServiceService } from './schedule-service.service';
+import { UpdateTrackerModule } from './update-tracker/update-tracker.module';
 
 const MONGO_PASSWORD = process.env.MONGO_PASSWORD;
 const DB_URI = `mongodb+srv://developer:${MONGO_PASSWORD}@cluster0-syfgo.mongodb.net/test?retryWrites=true&w=majority`;
@@ -15,6 +16,7 @@ const DB_URI = `mongodb+srv://developer:${MONGO_PASSWORD}@cluster0-syfgo.mongodb
     MongooseModule.forRoot(DB_URI),
     BreedsModule,
     ScraperModule,
+    UpdateTrackerModule,
     ScheduleModule.register(),
   ],
   controllers: [AppController],
